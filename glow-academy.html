@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Glow Academy | Skills-to-Income Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fef7f2;
+            font-family: 'Inter', 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1e1a2f;
+            padding: 2rem 1.5rem;
+        }
+
+        .document-wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 40px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            padding: 2.5rem 2.8rem 3.5rem 2.8rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c44569, #e26d5c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #5a4a42;
+            border-left: 5px solid #e26d5c;
+            padding-left: 1.2rem;
+            margin: 0.8rem 0 1.8rem 0;
+            font-weight: 500;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid #f2e3db;
+            padding-bottom: 2.5rem;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.8rem;
+            display: inline-block;
+            background: #faeae3;
+            padding: 0.3rem 1.3rem;
+            border-radius: 60px;
+            color: #b3452c;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .inline-img {
+            margin: 2rem 0;
+            text-align: center;
+            background: #fbf5f0;
+            padding: 1rem;
+            border-radius: 32px;
+        }
+
+        .inline-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.12);
+            border: 1px solid #f0ded4;
+            background: white;
+        }
+
+        .persona-card {
+            background: #fffaf7;
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid #ffe2d6;
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s;
+        }
+
+        .persona-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #bc4e2c;
+            margin-bottom: 0.3rem;
+        }
+
+        .persona-detail-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 1.2rem;
+            background: #fef2ec;
+            padding: 0.8rem 1.5rem;
+            border-radius: 28px;
+        }
+
+        .user-story-list, .epic-list {
+            padding-left: 1.8rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .user-story-list li, .epic-list li {
+            margin: 0.65rem 0;
+        }
+
+        hr {
+            margin: 2.5rem 0;
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #fad9cd, #f5bfad, #fad9cd);
+        }
+
+        .roadmap-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2rem 0 2rem;
+        }
+
+        .roadmap-card {
+            flex: 1 1 240px;
+            background: #faf1ec;
+            border-radius: 28px;
+            padding: 1.4rem 1.5rem;
+            border-left: 6px solid #e66767;
+            transition: all 0.2s;
+        }
+
+        .badge {
+            background: #e26d5c;
+            color: white;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 0.6rem;
+        }
+
+        footer {
+            margin-top: 3.8rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #a2887c;
+            border-top: 1px solid #f0dfd6;
+            padding-top: 2.2rem;
+        }
+
+        .epics-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .epic-card {
+            flex: 1;
+            min-width: 200px;
+            background: #fef3ef;
+            padding: 1.3rem 1.3rem;
+            border-radius: 28px;
+            font-weight: 500;
+            color: #b3452c;
+            border: 1px solid #ffe1d4;
+        }
+
+        .story-group {
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 750px) {
+            .document-wrapper {
+                padding: 1.2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .persona-name {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="document-wrapper">
+    <!-- header: GLOW ACADEMY brand (no project duration) -->
+    <div style="margin-bottom: 0.8rem;">
+        <h1>GLOW ACADEMY</h1>
+        <p style="font-size: 1.25rem; font-weight: 500; color: #bc5a40;">Skills-to-Income Platform</p>
+        <div class="subhead">Complete Project Documentation • GlowUp Mobile Application | Scrum Framework | User Personas | Story Map</div>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 18px; background: #faf3ef; padding: 0.8rem 1rem; border-radius: 60px;">
+            <span><strong>📋 Prepared by:</strong> Solvix</span>
+            <span><strong>📅 Date:</strong> 07 May 2026</span>
+            <span><strong>👥 Team Size:</strong> 6 Members (PO, SM, Frontend, Backend, QA, DevOps)</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">👥 PROJECT TEAM</h2>
+        <p><em>The Glow Academy project was developed using the Scrum framework with one Product Owner, one Scrum Master, and three Development Team members.</em></p>
+        <div class="roadmap-grid">
+            <div class="roadmap-card"><strong>👤 Product Owner</strong><br><b>Sisipho Keswa</b><br><a href="https://www.linkedin.com/in/sisipho-keswa/" target="_blank">LinkedIn Profile</a><br>Defines the product vision and manages the backlog.</div>
+            <div class="roadmap-card"><strong>📝 Scrum Master</strong><br><b>Thina Maliwa</b><br><a href="https://www.linkedin.com/in/thina-maliwa/" target="_blank">LinkedIn Profile</a><br>Facilitates Scrum ceremonies and removes blockers.</div>
+            <div class="roadmap-card"><strong>💻 Developer 1</strong><br><b>Yaqoob Samsodien</b><br><a href="https://www.linkedin.com/in/yaqoob-samsodien/" target="_blank">LinkedIn Profile</a><br>Frontend development and UI implementation.</div>
+            <div class="roadmap-card"><strong>💻 Developer 2</strong><br><b>Zusiphe Sidimba</b><br><a href="https://www.linkedin.com/in/zusiphe-sidimba-62008b2a2/" target="_blank">LinkedIn Profile</a><br>Backend development and API integration.</div>
+            <div class="roadmap-card"><strong>💻 Developer 3</strong><br><b>Zubenathi Anita Ncobo</b><br><a href="https://www.linkedin.com/in/zubenathi-ncobo-33054b267/" target="_blank">LinkedIn Profile</a><br>Testing, deployment, and feature development.</div>
+             <div class="roadmap-card"><strong>💻 Developer 4</strong><br><b>shaheed Karlie</b><br><a href="https://www.linkedin.com/in/shaheed-karlie-7a89b0348/" target="_blank">LinkedIn Profile</a><br>Testing, deployment, and feature development.</div>
+        </div>
+    </div>
+
+    <!-- SECTION 1: PITCH DECK (original section 1) -->
+    <div class="section">
+        <h2 class="section-title">📌 SECTION 1: GLOW ACADEMY — PITCH DECK</h2>
+        <p style="margin-bottom: 1.2rem;"><em>This section contains the full Glow Academy pitch deck, presenting the product vision, problem statement, user insights, solution, brand identity, and business model.</em></p>
+        <div class="inline-img">
+    <img src="images/glow-academy-figma.png" alt="Glow Academy Figma Design">
+</div>
+    </div>
+
+    <!-- SECTION 2: SCRUM FRAMEWORK DOCUMENTATION (originally section 3) -->
+    <div class="section">
+        <h2 class="section-title">🔄 SECTION 2: SCRUM FRAMEWORK DOCUMENTATION</h2>
+        <p><em>Scrum planning documentation, epics, user stories, roadmap, and sprint scope for GlowUp mobile app.</em></p>
+        
+        <div style="background: #fff8f5; padding: 1.6rem 2rem; border-radius: 32px; margin: 1.8rem 0;">
+            <h3 style="color:#bc4e2c; font-size: 1.5rem;">Product Framing</h3>
+            <p>The GlowUp app is not a salon booking app. It is a masterclass marketplace for township beauty entrepreneurs — helping informal hairdressers, nail techs, and barbers turn skills into income by teaching, verifying, and connecting learners to opportunity.</p>
+            <h4 style="margin-top: 1rem;">Why This Works</h4>
+            <ul style="margin-left: 1.5rem;"><li>✓ Fits the brief — solves a real problem in the informal economy</li><li>✓ Commercially viable through class listings, premium profiles, verification, and lead generation</li><li>✓ More original than a simple booking app — focus is masterclasses + skill proof + opportunity</li></ul>
+            <h4 style="margin-top: 1rem;">Product Angle — Creator-Trainer Marketplace</h4>
+            <ul style="margin-left: 1.5rem;"><li>Hairdressers can run braiding, wig-install, and styling masterclasses</li><li>Nail techs can run manicure, acrylic, and nail art masterclasses</li><li>Barbers can run fade, beard, and clipper masterclasses</li></ul>
+        </div>
+
+        <h3 style="margin-top: 1.2rem;">📌 Core Problem Statement</h3>
+        <p style="font-style:italic; background:#f7eae4; padding: 16px 24px; border-radius: 28px; margin: 0.8rem 0 1.8rem;">"Informal beauty professionals can be highly skilled, but they struggle to prove credibility, package their knowledge, and turn their skills into income beyond walk-in services."</p>
+        
+        <h3>💡 Core Idea</h3>
+        <ul style="margin: 0.8rem 0 1.8rem 1.8rem;"><li>A trainer creates a masterclass</li><li>Learners book and pay</li><li>After completion, learners get a digital badge or certificate</li><li>Trainers can also promote services or sell starter kits</li><li>The app helps turn one class into future income</li></ul>
+
+        <h3>📁 EPICS</h3>
+        <div class="epics-flex">
+            <div class="epic-card"><strong>Epic 1:</strong> Trainer Profile and Verification</div>
+            <div class="epic-card"><strong>Epic 2:</strong> Masterclass Listings and Discovery</div>
+            <div class="epic-card"><strong>Epic 3:</strong> Booking and Payments</div>
+            <div class="epic-card"><strong>Epic 4:</strong> Learning Progress and Certificates</div>
+            <div class="epic-card"><strong>Epic 5:</strong> Community and Opportunity Matching</div>
+        </div>
+
+        <h3>📋 USER STORIES</h3>
+        <div class="story-group"><strong>Epic 1: Trainer Profile and Verification</strong>
+        <ul class="user-story-list"><li>As a trainer, I want to create a profile with my photo, skills, and location so that learners can trust my masterclass listing.</li><li>As a trainer, I want to upload before-and-after photos of my work so that I can show proof of my skill.</li><li>As an admin, I want to verify trainer profiles so that the app stays credible and safe.</li></ul></div>
+        <div class="story-group"><strong>Epic 2: Masterclass Listings and Discovery</strong>
+        <ul class="user-story-list"><li>As a trainer, I want to create a masterclass listing with a title, date, price, and venue so that learners can see my class details.</li><li>As a learner, I want to search for masterclasses near me so that I can find affordable training in my area.</li><li>As a learner, I want to filter classes by hair, nails, or barbering so that I can choose the right skill category.</li></ul></div>
+        <div class="story-group"><strong>Epic 3: Booking and Payments</strong>
+        <ul class="user-story-list"><li>As a learner, I want to book a seat in a masterclass so that I can secure my spot.</li><li>As a trainer, I want to see a list of booked learners so that I can plan for class size.</li><li>As a learner, I want to pay for the class in the app so that I do not need to handle cash manually.</li></ul></div>
+        <div class="story-group"><strong>Epic 4: Learning Progress and Certificates</strong>
+        <ul class="user-story-list"><li>As a learner, I want to receive a digital badge after completing a class so that I can prove I attended.</li><li>As a trainer, I want to mark a learner as completed so that the app can generate a certificate.</li><li>As a learner, I want to view my training history so that I can track my growth over time.</li></ul></div>
+        <div class="story-group"><strong>Epic 5: Community and Opportunity Matching</strong>
+        <ul class="user-story-list"><li>As a learner, I want to find practice models so that I can improve my skills.</li><li>As a trainer, I want to post opportunities for assistants or models so that my students can get real experience.</li><li>As a learner, I want to be suggested for local beauty jobs so that I can start earning after training.</li></ul></div>
+
+        <h3>🗺️ PRODUCT ROADMAP</h3>
+        <div class="roadmap-grid">
+            <div class="roadmap-card"><strong>✨ Short Term</strong><br>✓ Trainer profile creation<br>✓ Masterclass listing creation<br>✓ Class discovery by location & category<br>✓ Basic booking flow</div>
+            <div class="roadmap-card"><strong>🚀 Mid Term</strong><br>✓ In-app payments<br>✓ Digital certificates & badges<br>✓ Trainer verification system<br>✓ Learner training history</div>
+            <div class="roadmap-card"><strong>🌟 Long Term</strong><br>✓ Practice model matching<br>✓ Job or assistant placement<br>✓ Product sales for kits & tools<br>✓ Analytics dashboard for trainers</div>
+        </div>
+
+        <h3>🏃 SPRINT 1 SCOPE</h3>
+        <p>For the hackathon, Sprint 1 is kept small and realistic. The scope covers:</p>
+        <ul style="margin-left: 1.8rem;"><li>✅ Create trainer profile</li><li>✅ Create masterclass listing</li><li>✅ Browse masterclasses</li><li>✅ Book a class</li></ul>
+        <p><em>This provides a clear first slice of value without overbuilding, and keeps the sprint focused for good Scrum execution.</em></p>
+    </div>
+
+    <!-- SECTION 3: USER PERSONAS (originally section 4) -->
+    <div class="section">
+        <h2 class="section-title">👥 SECTION 3: USER PERSONAS</h2>
+        <p><em>Three core user personas representing key roles in the township beauty ecosystem.</em></p>
+        
+        <div class="persona-card">
+            <div class="persona-name">PERSONA 1: BUKELWA M</div>
+            <div><em>Township Nail Technician and Masterclass Trainer</em></div>
+            <div class="persona-detail-grid"><span>📍 Age:</span> 28 &nbsp;|&nbsp; <span>📍 Location:</span> Gugulethu, Cape Town &nbsp;|&nbsp; <span>💼 Business:</span> Works from home and shared beauty space</div>
+            <p><strong>Background:</strong> Bukelwa is a self-taught nail technician who built her client base through social media, word of mouth, and consistent client work. She now runs small masterclasses alongside normal client appointments, but still manages bookings, payments, and class coordination manually.</p>
+            <p><strong>Goals:</strong> Grow income by teaching masterclasses, build stronger reputation as professional trainer, attract more students, eventually rent or own permanent space.</p>
+            <p><strong>Pain Points:</strong> Struggles to organise bookings for both clients and students, finds it hard to prove credibility beyond social media posts, needs better way to manage cash and digital payments.</p>
+            <p><strong>Needs:</strong> Simple way to list masterclasses, platform to show work and experience, booking support and payment tracking, growth from informal to stable business.</p>
+        </div>
+
+        <div class="persona-card">
+            <div class="persona-name">PERSONA 2: AYANDA DLAMINI</div>
+            <div><em>Learner / Aspiring Beauty Professional</em></div>
+            <div class="persona-detail-grid"><span>🎓 Age:</span> 19 &nbsp;|&nbsp; <span>📍 Location:</span> Kuils River, Cape Town &nbsp;|&nbsp; <span>📚 Role:</span> Student and part-time beauty learner</div>
+            <p><strong>Background:</strong> Ayanda is interested in learning nail art and hair styling so she can earn money while still studying. She looks at social media to find beauty trainers, but doesn't always know who is trustworthy or which classes are worth the money.</p>
+            <p><strong>Goals:</strong> Find affordable and trustworthy masterclasses nearby, learn a skill to make money, receive proof of completion, build confidence with paying clients.</p>
+            <p><strong>Pain Points:</strong> Users struggle to identify credible trainers, compare class pricing and inclusions, and access clear class information, making it difficult to feel confident that a booking is worth the cost. </p>
+        </div>
+
+        <div class="persona-card">
+            <div class="persona-name">PERSONA 3: OKUHLE JACK</div>
+            <div><em>Venue Partner / Community Space Owner</em></div>
+            <div class="persona-detail-grid"><span>🏢 Age:</span> 41 &nbsp;|&nbsp; <span>📍 Location:</span> Langa, Cape Town &nbsp;|&nbsp; <span>🏠 Business Type:</span> Community Venue Owner</div>
+            <p><strong>Background:</strong> Okuhle owns a small venue that can be rented out for beauty classes and training sessions. She wants to support local entrepreneurs while generating additional income through organised and reliable venue bookings.</p>
+            <p><strong>Goals:</strong> Rent out her space to trainers and students, earn extra income, support local businesses, and manage bookings efficiently.</p>
+            <p><strong>Pain Points:</strong> Venue owners struggle to advertise available spaces, manage booking schedules, communicate rental information clearly, and verify the trustworthiness of trainers before sharing their facilities.</p>
+        </div>
